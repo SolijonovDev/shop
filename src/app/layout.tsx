@@ -1,17 +1,24 @@
 'use client';
+
 import ThemeRegistry from '@/theme/theme';
 import Footer from '@/components/layout/footer';
-import Navbar from '@/components/layout/Navbar';
+import Header from '@/components/layout/Header';
 import { styled } from '@mui/material/styles';
 
-const Wrapper = styled('div')({
-  display: 'flex',
+const StyledLayout = styled('div')({
   minHeight: '100vh',
+  display: 'flex',
   flexDirection: 'column',
+  paddingTop: '50px',
+  '@media (min-width: 600px)': {
+    paddingTop: '60px',
+  },
 });
 
 const StyledMain = styled('main')({
   flexGrow: 1,
+  display: 'flex',
+  flexDirection: 'column',
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -28,11 +35,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <ThemeRegistry>
-          <Wrapper>
-            <Navbar />
+          <StyledLayout>
+            <Header />
             <StyledMain>{children}</StyledMain>
             <Footer />
-          </Wrapper>
+          </StyledLayout>
         </ThemeRegistry>
       </body>
     </html>

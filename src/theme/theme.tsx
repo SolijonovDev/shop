@@ -19,7 +19,7 @@ const themeOptions: ThemeOptions = {
   },
   palette: {
     background: {
-      default: 'darkgray',
+      default: '#fafafa',
     },
     primary: {
       main: '#1976d2',
@@ -49,7 +49,7 @@ const themeOptions: ThemeOptions = {
           '::-webkit-scrollbar': {
             width: '0',
           },
-          ul: {
+          'ul,li': {
             listStyleType: 'none',
           },
         },

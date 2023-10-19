@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import { BlogsView } from '@/views/BlogsView';
+import { CategoryView } from '@/views/CategoryView';
+import { Fragment } from 'react';
 
 async function getData() {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=5');
@@ -11,12 +11,12 @@ async function getData() {
   return res.json();
 }
 
-export default async function BlogsPage() {
+export default async function Home() {
   const data = await getData();
 
   return (
     <Fragment>
-      <BlogsView data={data} />
+      <CategoryView data={data} />
     </Fragment>
   );
 }
